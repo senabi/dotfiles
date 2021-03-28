@@ -60,6 +60,7 @@ window#waybar.empty {
   background-color: @base00;
   font-size: 11px;
   margin: 0px 2px 0px 2px;
+  min-width: 0;
   padding: 0px 10px 0px 10px;
   border-radius: 6px;
 }
@@ -70,6 +71,7 @@ window#waybar.empty {
   border-radius: 5px;
   font-weight: bold;
   margin: 0px 2px 0px 2px;
+  min-width: 0;
   padding: 0px 10px 0px 10px;
   color: @inactive;
 }

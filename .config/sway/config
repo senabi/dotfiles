@@ -8,14 +8,14 @@ set $term kitty
 set $font 'RobotoMono Nerd Font:size=11'
 set $SCRIPTS '~/.config/hotscripts/'
 set $menu wofi
-set $powermenu $SCRIPTS'powermenu.wl.rofi.fish'
+set $powermenu wlogout 
 set $gnome-schema org.gnome.desktop.interface
 
 ### Theming
 exec_always {
-    gsettings set $gnome-schema gtk-theme    'Pop-dark'
+    gsettings set $gnome-schema gtk-theme    'Materia-dark'
     gsettings set $gnome-schema icon-theme   'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Ice'
+    gsettings set $gnome-schema cursor-theme 'elementary'
     gsettings set $gnome-schema font-name    'Roboto Mono'
 }
 
