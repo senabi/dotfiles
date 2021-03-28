@@ -1,0 +1,10 @@
+window {
+  background-color: #202020;
+  color: #ebcb8b;
+}
+box#body {
+  background-color: #363636;
+  color: #eceff4;
+  border-radius: 10px;
+  padding: 50px;
+}

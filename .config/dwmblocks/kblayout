@@ -1,0 +1,5 @@
+#/bin/sh
+
+lay=$(setxkbmap -query | rg layout | tr -d '[:space:]')
+lay=${lay#*:}
+echo $lay

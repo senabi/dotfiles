@@ -1,0 +1,191 @@
+@define-color background #282828;
+@define-color foreground #d5c4a1;
+@define-color inactive   #7c6f64;
+@define-color black      #222222;
+@define-color yellow     #FABD2F;
+@define-color red        #FB4934;
+@define-color green      #8EC07c;
+@define-color base10 #202020;
+@define-color base00 #363636;
+@define-color base01 #3b4252;
+@define-color base02 #434c5e;
+@define-color base03 #5E81AC;
+@define-color base04 #8FBCBB;
+@define-color base05 #e5e9f0;
+@define-color base06 #eceff4;
+@define-color base07 #81A1C1;
+@define-color base08 #6a85a2;
+@define-color base09 #446c92;
+@define-color base0A #c8dff6;
+@define-color base0B #cb7073;
+@define-color base0C #d59877;
+@define-color base0D #A3BE8C;
+@define-color base0E #EBCB8B;
+@define-color base0F #8c94ae;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Roboto Mono, Material Design Icons;
+  min-height: 0;
+  margin: 2px;
+}
+
+window#waybar {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  background-color: @base10;
+  color: @base04;
+  /* border-bottom: 1px solid @base00; */
+}
+
+window#waybar.empty {
+}
+
+/* #workspaces { */
+/*   padding: 0px; */
+/*   background-color: @base00; */
+/*   font-size: 15px; */
+/*   margin-right: 10px; */
+/*   border-radius: 6px; */
+/* } */
+/* #tags { */
+/*   background-color: @base00; */
+/*   padding: 0px; */
+/*   font-size: 15px; */
+/*   border-radius: 6px; */
+/* } */
+#workspaces,
+#tags {
+  background-color: @base00;
+  font-size: 11px;
+  margin: 0px 2px 0px 2px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 6px;
+}
+
+#workspaces button,
+#tags button {
+  font-size: 11px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 0px 2px 0px 2px;
+  padding: 0px 10px 0px 10px;
+  color: @inactive;
+}
+#window {
+  color: @base06;
+  /* border-radius: 10px; */
+  /* padding: 0px 5px 0px 5px; */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#workspaces button:hover,
+#tags button:hover {
+  /* background-color: @black; */
+  /* background-color: @base10; */
+  box-shadow: inherit;
+  color: @base0D;
+}
+#workspaces button.focused,
+#tags button.focused {
+  font-weight: bold;
+  color: @yellow;
+  /* color: @base0E; */
+}
+#tags button.focused {
+  font-weight: 600;
+}
+#workspaces button.urgent {
+  color: @base0B;
+  font-weight: bold;
+}
+#tags button {
+  font-weight: 600;
+}
+
+#cpu,
+#memory,
+#network,
+#pulseaudio {
+  border-radius: 6px;
+  background-color: @base00;
+  padding: 0px 5px 0px 5px;
+  margin: 0px 2px 0px 2px;
+}
+#memory {
+  color: @base0F;
+}
+#cpu {
+  color: @base0F;
+}
+#network {
+  color: @base04;
+}
+/* #custom-mpd, */
+#custom-media,
+#mpd {
+  color: @inactive;
+  border-radius: 6px;
+  background-color: @base00;
+  padding: 0px 5px 0px 5px;
+  margin: 0px 2px 0px 2px;
+  /* background-color: transparent; */
+}
+#custom-media.Playing {
+  color: @base0B;
+  border-radius: 6px;
+  background-color: @base00;
+  padding: 0px 5px 0px 5px;
+  margin: 0px 2px 0px 2px;
+  font-weight: 500;
+}
+/* #custom-mpd { */
+/*   color: @base0F; */
+/*   border-radius: 6px; */
+/*   font-weight: 500; */
+/* } */
+/* #mpd.paused { */
+/*   color: @base03; */
+/* } */
+/* #mpd.playing { */
+/*   color: @base09; */
+/* } */
+/* #mpd.stopped { */
+/*   color: @base01; */
+/* } */
+#pulseaudio {
+  color: @base0F;
+  border-radius: 6px;
+}
+#pulseaudio.muted {
+  color: @inactive;
+}
+@keyframes blink {
+  to {
+    background-color: #eceff4;
+    color: @base00;
+  }
+}
+#clock {
+  border-radius: 6px;
+  background-color: @base00;
+  padding: 0px 5px 0px 5px;
+  margin: 0px 2px 0px 2px;
+  color: @base0D;
+}
+#custom-actualclock,
+#tray {
+  border-radius: 6px;
+  background-color: @base00;
+  padding: 0px 5px 0px 5px;
+  margin: 0px 2px 0px 2px;
+  /* margin-left: 2px; */
+  color: @base0E;
+}

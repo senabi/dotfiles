@@ -1,0 +1,12 @@
+[Added Associations]
+application/x-theme=VSCodium.desktop;vim.desktop;
+image/jpeg=imv.desktop;
+
+[Default Applications]
+image/jpeg=imv.desktop
+text/html=brave-browser.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+application/pdf=org.gnome.Evince.desktop

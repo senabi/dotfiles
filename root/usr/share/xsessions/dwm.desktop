@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=dwm
+Comment=Dynamic Window Manger
+Exec=/home/nabi/.config/dwm/startup.sh
+Type=Application

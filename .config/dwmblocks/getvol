@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+read on_off vol <<< $(amixer -D pulse sget Master | awk -F '[][]' 'END{ print $4" "$2 }')
+vol=$(echo $vol | tr -d '%')
+high="󰕾"
+medium="󰖀"
+low="󰕿"
+mute="󰝟"
+
+[ $vol -lt 33 ] && [ $on_off == "on" ] && echo "$low $vol%"
+[ $vol -gt 33 ] && [ $vol -lt 66 ] && [ $on_off == "on" ] && echo "$medium $vol%"
+[ $vol -gt 66 ] && [ $on_off == "on" ] && echo "$high $vol%"
+[ $on_off == "off" ] && echo "$mute $vol%"

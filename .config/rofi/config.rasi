@@ -1,0 +1,5 @@
+configuration {
+  font: "Roboto Mono 12";
+  show-icons: true;
+  icon-theme: "Papirus-dark";
+}

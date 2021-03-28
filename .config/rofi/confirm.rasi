@@ -1,0 +1,21 @@
+* {
+    background-color: #121212;
+    text-color: #ffe5c2;
+    border: #ffaf3e;
+    font: "Roboto Mono 12";
+}
+
+window {
+    width: 300px;
+    padding: 25px;
+    border:	1px;
+    border-radius: 12px;
+    border-color: @border;
+    location: center;
+    y-offset: -2em;
+}
+
+entry {
+    expand: true;
+    text-color: @border;
+}

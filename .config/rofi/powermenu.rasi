@@ -1,0 +1,97 @@
+* {
+  maincolor: #edbbb2;
+  urgentcolor: #fb4934;
+  fgwhite: #cfcfcf;
+  blackdarkest: #121212;
+  blackwidget: #262626;
+  blackentry: #292929;
+  blackselect: #303030;
+  darkgray: #848484;
+  scrollbarcolor: #a89984;
+  yellowish: #ffaf3e;
+  lightyellowish: #ffe5c2;
+  font: "Roboto Mono 18";
+  background-color: @blackdarkest;
+}
+
+window {
+  background-color: @blackdarkest;
+  text-color: @lightyellowish;
+  border-radius: 12px;
+  height: 22%;
+  width: 41%;
+  location: center;
+  x-offset: 0;
+  y-offset: 0;
+}
+prompt {
+  enabled: true;
+  padding: 3% 0.5% 0% 3%;
+  background-color: @blackdarkest;
+  text-color: @lightyellowish;
+}
+inputbar {
+  children: [ prompt ];
+  background-color: @blackdarkest;
+  text-color: @lightyellowish;
+  expand: false;
+  border: 0% 0.2% 0.2% 0%;
+  border-radius: 0% 100% 100% 100%;
+  border-color: @border;
+  margin: 0% 3% 0% 9.5%;
+  padding: 0.5%;
+  position: center;
+}
+listview {
+  background-color: @blackdarkest;
+  margin: 0% 0% 0% 0%;
+  spacing: 1%;
+  cycle: true;
+  dynamic: true;
+  layout: horizontal;
+}
+mainbox {
+  background-color: @blackdarkest;
+  children: [ inputbar, listview ];
+  spacing: 1.5%;
+  padding: 0.1% 0% 0% 2%;
+}
+element {
+  background-color: @background-alt;
+  text-color: @lightyellowish;
+  orientation: horizontal;
+  border-radius: 100%;
+}
+element-text {
+  font: "feather 28";
+  expand: true;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  margin: 2.5% 1.7% 2.5% 1.7%;
+}
+element normal.urgent,
+element alternate.urgent {
+  background-color: @urgent;
+  text-color: @lightyellowish;
+  border-radius: 0.2%;
+}
+element normal.active,
+element alternate.active {
+  background-color: @blackdarkest;
+  text-color: @lightyellowish;
+}
+element selected {
+  background-color: @blackdarkest;
+  text-color: @yellowish;
+  border: 0% 0.2% 0.2% 0%;
+  border-radius: 100%;
+  border-color: @border;
+}
+element selected.urgent {
+  background-color: @urgent;
+  text-color: @lightyellowish;
+}
+element selected.active {
+  background-color: @blackdarkest;
+  color: @lightyellowish;
+}

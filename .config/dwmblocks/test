@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+{ read artist; read title; read pl_status; } <<< $(echo -e $(playerctl metadata --format '{{ artist }}\n{{ title }}\n{{ status }}'))
+play_icon="󰐊"
+pause_icon="󰏤"
+
+[[ $artist == "No players found" ]] && echo ""
+[[ $artist != "No players found" ]] && [ $pl_status == "Paused" ] && echo "$play_icon ${artist:0:15} - ${title:0:25}"
+[[ $artist != "No players found" ]] && [ $pl_status == "Playing" ] && echo "$pause_icon ${artist:0:15} - ${title:0:25}"

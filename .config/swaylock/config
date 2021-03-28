@@ -1,0 +1,49 @@
+# LETEMKNOW
+ignore-empty-password
+clock
+timestr=%R
+datestr=%a, %e of %B
+
+# Effects
+screenshots
+fade-in=0.3
+effect-blur=9x9
+effect-vignette=0.8:0.8
+grace=2
+#effect-greyscale
+effect-scale=1.4
+scaling=fill
+
+# Ring
+indicator
+indicator-radius=100
+indicator-thickness=5
+indicator-caps-lock
+key-hl-color=#ffaf3e
+bs-hl-color=#bf616a
+separator-color=#00000000
+## insides
+inside-color=#00000099
+inside-clear-color=#ffd20400
+inside-caps-lock-color=#009ddc00
+inside-ver-color=#d9d8d800
+inside-wrong-color=#ee2e2400
+## ring
+ring-color=#231f20D9
+ring-clear-color=#ebcb8b
+ring-caps-lock-color=#231f20D9
+ring-ver-color=#d9d8d8
+ring-wrong-color=#bf616a
+## lines
+line-color=#00000000
+line-clear-color=#ffd204
+line-caps-lock-color=#009ddc
+line-ver-color=#d9d8d8
+line-wrong-color=#bf616a
+
+# Text
+font=Roboto Mono
+text-clear-color=#d8dee900
+text-ver-color=#d8dee900
+text-wrong-color=#d8dee900
+text-caps-lock-color=#d8dee900

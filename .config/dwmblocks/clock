@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+clock=`date +"%H:%M:%S"`
+echo "$clock"

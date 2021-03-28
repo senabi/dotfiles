@@ -1,0 +1,110 @@
+{
+  "layer": "top",
+  "height": 15,
+  "modules-left": ["sway/workspaces", "sway/mode", "tray"],
+  "modules-right": [
+    "custom/media",
+    "custom/updates",
+    "cpu",
+    "memory",
+    "battery",
+    "pulseaudio",
+    "clock",
+    "custom/actualclock"
+  ],
+  "sway/workspaces": {
+    "format": "{icon}",
+    "persistent_workspaces": {
+      "1": ["DP-1"],
+      "2": ["DP-1"],
+      "3": ["DP-1"],
+      "4": ["DP-1"],
+      "5": ["DP-1"],
+      "6": ["HDMI-A-2"],
+      "7": ["HDMI-A-2"],
+      "8": ["HDMI-A-2"],
+      "9": ["HDMI-A-2"],
+      "10": ["HDMI-A-2"]
+    },
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    }
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "custom/media": {
+    "format": "{icon}{}",
+    "return-type": "json",
+    "format-icons": {
+      "Playing": "󰏤 ",
+      "Paused": "󰐊 "
+    },
+    "max-length": 50,
+    "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}} : {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause"
+  },
+  "custom/updates": {
+    "exec": "waybar-updates show",
+    "return-type": "json",
+    "signal": 1,
+    "on-click-right": "waybar-updates refresh",
+    "interval": "once"
+  },
+  "custom/recording": {
+    "exec": "waybar-recording",
+    "return-type": "json",
+    "signal": 3,
+    "interval": "once"
+  },
+  "clock": {
+    "interval": 1,
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "󰃭  {:%a, %b %d}"
+  },
+  "custom/actualclock": {
+    "interval": 1,
+    "exec": "clock=$(date +\"%H:%M:%S\"); echo \"󰅐 $clock\""
+  },
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "memory": {
+    "format": "󰘚 {}%",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%   {format_source}",
+    "format-bluetooth": "{icon}󰂯 {volume}%   {format_source}",
+    "format-bluetooth-muted": "󰝟 {icon}󰂯   {format_source}",
+    "format-muted": "󰝟 {format_source}",
+    "format-source": "󰍬 {volume}%",
+    "format-source-muted": "󰍭",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "",
+      "headset": "",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  }
+}
