@@ -11,20 +11,16 @@ for dots in $(ls -A $dir_dotfiles); do
     .config)
       echo "[symlinking $dots folders -> .config]"
       for config in $(ls -A $dotpath); do
-        echo "linking $dotpath"
+        ln -s $dotpath $HOME/$dots
       done
       ;;
-    .local)
-      echo "[copying $dotpath -> .local]"
-      echo "cp -rf $dotpath $HOME"
+    .local | .xinitrc)
+      echo "[copying $dotpath -> ~/$dots]"
       cp -rf $dotpath $HOME
       ;;
     root)
       echo "[copying $dotpath -> /]"
-      echo "sudo cp -rf $dotpath /"
       sudo cp -rf $dotpath /
       ;;
-    .git | run.sh)
-      echo "ignoring $dots"
     esac
 done
