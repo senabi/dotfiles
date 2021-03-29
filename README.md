@@ -54,7 +54,7 @@ yay -S materia-gtk-theme qt5-base materia-kde kvantum-theme-materia
 
 
 # Juicers
-yay -S kitty ffmpeg mpv imv azote-git neovim-nightly-bin nwg-launchers lxappearance pavucontrol polkit polkit-gnome bottom htop rg bat exa procs fd starship zathura zathura-pdf-poppler jq libxft-bgra wofi evince papirus-icon-theme pango youtube-dl reflector brave unimatrix-git tesseract tesseract-data-eng google-chrome firefox
+yay -S kitty ffmpeg mpv imv azote-git neovim-nightly-bin nwg-launchers lxappearance pavucontrol polkit polkit-gnome bottom htop rg bat exa procs fd starship zathura zathura-pdf-poppler jq libxft-bgra wofi evince papirus-icon-theme pango youtube-dl reflector brave unimatrix-git tesseract tesseract-data-eng google-chrome firefox fish-git
 
 
 # EWW: https://elkowar.github.io/eww/main/
