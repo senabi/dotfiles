@@ -11,7 +11,7 @@ for dots in $(ls -A $dir_dotfiles); do
     .config)
       echo "[symlinking $dots folders -> .config]"
       for config in $(ls -A $dotpath); do
-        ln -s $dotpath $HOME/$dots
+        ln -s $dotpath/$config $HOME/$dots
       done
       ;;
     .local | .xinitrc)
