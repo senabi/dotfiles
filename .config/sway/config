@@ -5,7 +5,7 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $font 'RobotoMono Nerd Font:size=11'
+set $font 'Roboto Mono:size=11'
 set $SCRIPTS '~/.config/hotscripts/'
 set $menu wofi
 set $powermenu wlogout 
@@ -42,7 +42,7 @@ input "5426:92:Razer_Razer_DeathAdder_Elite" {
 }
 
 ### Font
-font pango:RobotoMono Nerd Font 11px
+font pango:Roboto Mono 11px
 
 ### Output configuration
 output DP-1 pos 0 0 scale 1 res 1920x1080
@@ -83,17 +83,24 @@ bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. 
 # Power Menu
 bindsym $mod+x exec $powermenu
 
+# Swaping containers and windows
+bindsym $mod+Shift+$left mark swap; focus left; swap container with mark swap; unmark swap; focus left
+bindsym $mod+Shift+$down mark swap; focus down; swap container with mark swap; unmark swap; focus down
+bindsym $mod+Shift+$up mark swap; focus up; swap container with mark swap; unmark swap; focus up
+bindsym $mod+Shift+$right mark swap; focus right; swap container with mark swap; unmark swap; focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Alt+$left move left
+bindsym $mod+Alt+$down move down
+bindsym $mod+Alt+$up move up
+bindsym $mod+Alt+$right move right
+
 # Move your focus around
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# Move the focused window with the same, but add Shift
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
 
 # Workspaces:
 set $monitor-one 'DP-1'
@@ -134,6 +141,8 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Next/Previous
 bindsym Alt+$up workspace next_on_output
 bindsym Alt+$down workspace prev_on_output
+# Toggle Workspaces
+bindsym $mod+Tab workspace back_and_forth
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 #
@@ -168,11 +177,12 @@ bindsym $mod+a focus parent
 # You can send windows there and get them back later.
 
 # Move the currently focused window to the scratchpad
-bindsym $mod+Return move scratchpad
+bindsym Alt+Shift+Return move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Alt+Return scratchpad show
+
 #
 # Resizing containers:
 #

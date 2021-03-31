@@ -1,39 +1,40 @@
 #!/bin/sh
 
-yay -S sway mako autotiling swappy-git swayidle-git swaylock-effects-git waybar-git wf-recorder wlogout-git wob-git wl-clipboard slurp grim
+#yay -S sway mako autotiling swappy-git swayidle-git swaylock-effects-git waybar-git wf-recorder wlogout-git wob-git wl-clipboard slurp grim
 
-yay -S dunst picom-jonaburg-git rofi xorg feh
+#yay -S dunst picom-jonaburg-git rofi xorg feh
 
 # X
-yay -S xorg-server xorg
+#yay -S xorg-server xorg
 # Wayland
-yay -S wayland wayland-protocols xorg-xwayland
+#yay -S wayland wayland-protocols xorg-xwayland
 # Video Drivers
-yay -S xf86-video-amdgpu
+#yay -S xf86-video-amdgpu
 # Video Acceleration
-yay -S libva-mesa-driver
+#yay -S libva-mesa-driver
 ## Info:
 # https://wiki.archlinux.org/index.php/xorg#Driver_installation
 # https://wiki.archlinux.org/index.php/Hardware_video_acceleration
 
 # Display manager:
-yay -S gtk3 gtk3 greetd-git greetd-gtkgreet-git sway
+yay -S gtk3 greetd-git greetd-gtkgreet-git sway
 # GDM (Wayland compatible)
 # Lightdm (Not Wayland compatible)
 
 # Audio
-yay -S alsa-utils pulseaudio-alsa pamixer pulsemixer pavucontrol
+#yay -S alsa-utils pulseaudio-alsa pamixer pulsemixer pavucontrol
 # Bluetooth
-yay -S bluez bluez-utils pulseaudio-bluetooth
+#yay -S bluez bluez-utils pulseaudio-bluetooth
 ## Info:
 # https://wiki.archlinux.org/index.php/PulseAudio
 
 # Fonts
-yay -S noto-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts ttf-material-design-icons-extended ttf-joypixels ttf-roboto-mono fontconfig freetype2 lib32-fontconfig lib32-freetype2 libfontenc libotf
+#yay -S noto-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts ttf-material-design-icons-extended ttf-joypixels ttf-roboto-mono fontconfig freetype2 lib32-fontconfig lib32-freetype2 libfontenc libotf
 
 #GTK/QT
-yay -S materia-gtk-theme qt5-base materia-kde kvantum-theme-materia
+#yay -S materia-gtk-theme qt5-base materia-kde kvantum-theme-materia
 
 
 # Juicers
-yay -S kitty ffmpeg mpv imv azote-git neovim-nightly-bin nwg-launchers lxappearance pavucontrol polkit polkit-gnome bottom htop rg bat exa procs fd starship zathura zathura-pdf-poppler jq libxft-bgra wofi evince papirus-icon-theme pango youtube-dl reflector brave unimatrix-git tesseract tesseract-data-eng google-chrome firefox fish-git
+#yay -S kitty ffmpeg mpv imv azote-git neovim-nightly-bin nwg-launchers lxappearance pavucontrol polkit polkit-gnome bottom htop ripgrep bat exa procs fd starship zathura zathura-pdf-poppler jq libxft-bgra wofi evince papirus-icon-theme pango youtube-dl reflector brave unimatrix-git tesseract tesseract-data-eng google-chrome firefox fish-git
+yay -S kitty ffmpeg mpv imv azote-git neovim-nightly-bin pavucontrol polkit polkit-gnome bottom htop ripgrep bat exa procs fd starship zathura zathura-pdf-poppler jq libxft-bgra wofi evince papirus-icon-theme pango youtube-dl reflector unimatrix-git tesseract tesseract-data-eng firefox fish-git
