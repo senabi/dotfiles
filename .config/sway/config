@@ -221,6 +221,11 @@ default_border pixel 3
 
 include /etc/sway/config.d/*
 
+
+### Some Keycombinations
+# Alt + Tab
+bindsym Alt+Tab exec '~/.config/sway/windows.sh'
+
 ### Audio | audio | sound:
 bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob
 bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob
@@ -279,6 +284,6 @@ exec mako
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#FF7A675E' --background-color '#00464646' --bar-color '#FF7A675E'
 exec ~/.azotebg
-#exec_always python3 ~/.config/sway/swayfader.py
-exec autotiling
 exec nm-applet --indicator
+exec autotiling
+#exec_always python3 ~/.config/sway/swayfader.py

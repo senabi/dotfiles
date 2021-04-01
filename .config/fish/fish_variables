@@ -4,7 +4,6 @@ SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_install_2D_fonts:sudo\x20fc\x2dcache\x20\x2dfv
 SETUVAR _fish_abbr_mirror:sudo\x20reflector\x20\x2df\x2030\x20\x2dl\x2030\x20\x2d\x2dnumber\x2010\x20\x2d\x2dverbose\x20\x2d\x2dsave\x20/etc/pacman\x2ed/mirrorlist
 SETUVAR _fish_abbr_pacman:sudo\x20pacman
-SETUVAR _fish_abbr_sudo:doas
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7

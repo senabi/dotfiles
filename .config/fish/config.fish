@@ -9,13 +9,11 @@ alias tofish "sudo chsh $USER -s (which fish) && echo 'Now log out.'"
 alias cleanup "sudo pacman -Qtdq | sudo pacman -Rns -"
 alias ll "exa -ll"
 alias la "exa -la"
-alias sudo "doas"
 
 # fish abbreviations
 abbr install-fonts "sudo fc-cache -fv"
 abbr pacman "sudo pacman"
 abbr mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-abbr sudo "doas"
 
 # shell variables
 set -x EDITOR nvim
