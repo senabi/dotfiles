@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Firefox on Wayland
+Exec=env MOZ_ENABLE_WAYLAND=1 firefox
+Icon=firefox

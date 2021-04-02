@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
-Name=Brave Wayland
+Name=Brave on Wayland
 Exec=brave --enable-features=UseOzonePlatform --ozone-platform=wayland
 Icon=brave
