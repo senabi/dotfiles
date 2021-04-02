@@ -16,6 +16,7 @@ abbr pacman "sudo pacman"
 abbr mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 
 # shell variables
+set fish_greeting
 set -x EDITOR nvim
 set -x VISUAL nvim
 set PATH $HOME/.cargo/bin/ $HOME/.local/bin $PATH
