@@ -8,7 +8,7 @@ set $term kitty
 set $font 'Roboto Mono:size=11'
 set $SCRIPTS '~/.config/hotscripts/'
 set $menu wofi
-set $powermenu wlogout 
+set $powermenu wlogout -p layer-shell
 set $gnome-schema org.gnome.desktop.interface
 
 ### Theming
@@ -42,15 +42,15 @@ input "5426:92:Razer_Razer_DeathAdder_Elite" {
 }
 
 ### Font
-font pango:Roboto Mono 11px
+font pango:Roboto Mono 10px
 
 ### Output configuration
 output DP-1 pos 0 0 scale 1 res 1920x1080
 output HDMI-A-2 pos 1920 0 scale 1 res 1920x1080
 
 #class                   $border    $bg        $text      $indica     $child_border
-client.focused           #1D2021    #1D2021    #EBDBB2    #1D2021     #7A675E
-client.focused_inactive  #282828    #282828    #EBDBB2    #282828     #464646
+client.focused           #1D2021    #1D2021    #EBDBB2    #A3BE8C     #ab9285
+client.focused_inactive  #282828    #282828    #EBDBB2    #8c94ae     #464646
 client.unfocused         #282828    #282828    #A89984    #FFFFFF     #464646
 client.urgent            #1D2021    #1D2021    #EBDBB2    #FFAF3F     #CC241d
 
@@ -138,11 +138,26 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
-# Next/Previous
+# Next/Previous 
 bindsym Alt+$up workspace next_on_output
 bindsym Alt+$down workspace prev_on_output
+bindsym Alt+Shift+$up move container to workspace next_on_output
+bindsym Alt+Shift+$down move container to workspace prev_on_output
+# This is buggy https://github.com/swaywm/sway/issues/5913
+#bindsym Alt+$left workspace prev_on_output --create
+#bindsym Alt+$right workspace next_on_output --create
+#bindsym Alt+Shift+$left move container to workspace prev --create
+#bindsym Alt+Shift+$right move container to workspace next --create
+
 # Toggle Workspaces
 bindsym $mod+Tab workspace back_and_forth
+# Move container to output right/left/up/down
+bindsym $mod+Shift+period move container to output right
+bindsym $mod+Shift+comma move container to output left
+# Move foucus to output right/left/up/down
+bindsym $mod+period focus output right
+bindsym $mod+comma focus output left
+
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 #
@@ -155,9 +170,9 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+t layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+t layout toggle split
 
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
@@ -264,6 +279,8 @@ for_window [title="Discord Updater"] floating enable
 for_window [title="File Already Exist"] floating enable
 for_window [app_id="pavucontrol"] floating enable, sticky enable, resize set width 550 px height 600px, move position cursor, move down 330
 for_window [title="Customize Look and Feel"] floating enable
+for_window [title="Save File"] floating enable
+for_window [app_id="azote"] floating enable
 # Gaps on second monitor
 # workspace 6 gaps outer 0
 # workspace 6 gaps inner 0
@@ -282,8 +299,8 @@ for_window [title="Customize Look and Feel"] floating enable
 ### Autostart
 exec mako
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#FF7A675E' --background-color '#00464646' --bar-color '#FF7A675E'
-exec ~/.azotebg
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#FF464646' --background-color '#00202020' --bar-color '#FFEBCB8B'
 exec nm-applet --indicator
+exec ~/.azotebg
 exec autotiling
 #exec_always python3 ~/.config/sway/swayfader.py

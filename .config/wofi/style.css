@@ -1,4 +1,20 @@
-@import ".config/waybar/material.css";
+@define-color base10 #202020;
+@define-color base00 #363636;
+@define-color base01 #3b4252;
+@define-color base02 #434c5e;
+@define-color base03 #5E81AC;
+@define-color base04 #8FBCBB;
+@define-color base05 #e5e9f0;
+@define-color base06 #eceff4;
+@define-color base07 #81A1C1;
+@define-color base08 #6a85a2;
+@define-color base09 #446c92;
+@define-color base0A #c8dff6;
+@define-color base0B #cb7073;
+@define-color base0C #d59877;
+@define-color base0D #A3BE8C;
+@define-color base0E #EBCB8B;
+@define-color base0F #8c94ae;
 
 #entry {
   border-radius: 5px;
