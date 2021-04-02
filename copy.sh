@@ -20,7 +20,7 @@ for dots in $(ls -A $dir_dotfiles); do
       ;;
     root)
       echo "[copying $dotpath -> /]"
-      sudo cp -rf $dotpath /
+      sudo cp -rf $dotpath/* /
       ;;
     esac
 done
