@@ -15,7 +15,7 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme    'Materia-dark'
     gsettings set $gnome-schema icon-theme   'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'elementary'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema font-name    'Roboto Mono'
 }
 
@@ -281,6 +281,7 @@ for_window [app_id="pavucontrol"] floating enable, sticky enable, resize set wid
 for_window [title="Customize Look and Feel"] floating enable
 for_window [title="Save File"] floating enable
 for_window [app_id="azote"] floating enable
+for_window [app_id="anki"] floating enable
 # Gaps on second monitor
 # workspace 6 gaps outer 0
 # workspace 6 gaps inner 0

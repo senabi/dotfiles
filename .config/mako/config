@@ -8,7 +8,7 @@ height=150
 border-size=2
 border-color=#202020
 border-radius=5
-default-timeout=5000
+default-timeout=10000
 icon-path=/usr/share/icons/Papirus-Dark
 max-icon-size=100
 # format

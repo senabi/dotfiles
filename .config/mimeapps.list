@@ -3,5 +3,5 @@ image/jpeg=imv.desktop;
 
 [Default Applications]
 image/jpeg=imv.desktop
-text/html=brave-browser.desktop
+text/html=nvim.desktop
 application/pdf=org.gnome.Evince.desktop

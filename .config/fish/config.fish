@@ -14,12 +14,13 @@ alias la "exa -la"
 abbr install-fonts "sudo fc-cache -fv"
 abbr pacman "sudo pacman"
 abbr mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+abbr wl-electron "--enable-features=UseOzonePlatform --ozone-platform=wayland"
 
 # shell variables
 set fish_greeting
-set -x EDITOR nvim
-set -x VISUAL nvim
-set PATH $HOME/.cargo/bin/ $HOME/.local/bin $PATH
+#set -x EDITOR nvim
+#set -x VISUAL nvim
+#set PATH $HOME/.cargo/bin/ $HOME/.local/bin $PATH
 
 # startup
 starship init fish | source
