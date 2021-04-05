@@ -1,5 +1,5 @@
 [character]
 format = "$symbol"
 success_symbol = "[N -> ](bold #8c94ae)"
-error_symbol = "[ERR x ](bold #FB4934)"
+error_symbol = "[ERR * ](bold #FB4934)"
 vicmd_symbol = "[VI -> ](bold yellow)"

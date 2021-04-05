@@ -1,3 +1,6 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
+export TERMINAL="kitty"
+export NNN_PLUG="p:preview-tui"
+export NNN_FIFO="/tmp/nnn.fifo"
 export ZDOTDIR="$HOME/.config/zsh"
