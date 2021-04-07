@@ -20,6 +20,9 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set termguicolors
+set listchars=eol:¬,tab:->,trail:-,extends:>,precedes:<,space:•
+"set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set list
 
 "other sets
 set path+=**
@@ -46,25 +49,26 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 "Theme
 Plug 'gruvbox-community/gruvbox'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'junegunn/rainbow_parentheses.vim'
 call plug#end()
 colorscheme gruvbox
 lua require'colorizer'.setup()
+"RainbowParentheses
 "editor
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 "highlight Normal guibg=none
 "highlight NonText guibg=none
 
-"syntax on
-"highlight ColorColumn guibg=#464646
+highlight NonText guifg=#464646
 
 "lets
-let  mapleader = " "
+let mapleader = " "
 
 "remaps
 "normal no recursive execution map
-"project wide search: word search on this project
-nnoremap <leader>sp :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ") })<CR>
+"project wide search: word search on this project "i name it fuzzy search
+nnoremap <leader>zs :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ") })<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 "so is this the greatest one?

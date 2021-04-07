@@ -281,6 +281,8 @@ for_window [app_id="pavucontrol"] floating enable, sticky enable, resize set wid
 for_window [title="Customize Look and Feel"] floating enable
 for_window [title="Save File"] floating enable
 for_window [title="Firefox — Sharing Indicator"] floating enable
+for_window [title="meet.google.com is sharing your screen."] floating enable
+for_window [title="discord.com is sharing your screen."] floating enable
 for_window [app_id="azote"] floating enable
 for_window [app_id="anki"] floating enable
 # Gaps on second monitor
@@ -301,7 +303,7 @@ for_window [app_id="anki"] floating enable
 ### Autostart
 exec mako
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#FF464646' --background-color '#FF202020' --bar-color '#FFEBCB8B'
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob --border-color '#FF464646' --background-color '#60202020' --bar-color '#FFEBCB8B'
 exec nm-applet --indicator
 exec ~/.azotebg
 exec autotiling

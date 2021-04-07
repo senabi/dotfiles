@@ -133,6 +133,7 @@ window#waybar.empty {
 /* #custom-mpd, */
 #custom-media,
 #mpd {
+  font-size: 11px;
   color: @inactive;
   border-radius: 6px;
   background-color: @base00;
@@ -141,6 +142,7 @@ window#waybar.empty {
   /* background-color: transparent; */
 }
 #custom-media.Playing {
+  font-size: 11px;
   color: @base0B;
   border-radius: 6px;
   background-color: @base00;
