@@ -283,6 +283,7 @@ for_window [title="Save File"] floating enable
 for_window [title="Firefox — Sharing Indicator"] floating enable
 for_window [title="meet.google.com is sharing your screen."] floating enable
 for_window [title="discord.com is sharing your screen."] floating enable
+for_window [title="Unknown"] floating enable, resize set width 500 px height 500px
 for_window [app_id="azote"] floating enable
 for_window [app_id="anki"] floating enable
 # Gaps on second monitor

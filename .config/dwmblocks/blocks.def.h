@@ -4,6 +4,7 @@ static const Block blocks[] = {
 	{"", "$HOME/.config/dwmblocks/music",	1,		0},
 	{"", "$HOME/.config/dwmblocks/getvol",	1,		0},
 	{"", "$HOME/.config/dwmblocks/kblayout",	1,		0},
+	{"󰍛 ", "$HOME/.config/dwmblocks/getcpu",	1,		0},
 	{"󰘚 ", "$HOME/.config/dwmblocks/getram",	30,		0},
 	{"󰃭 ", "$HOME/.config/dwmblocks/date",	60,		0},
 	{"󰅐 ", "$HOME/.config/dwmblocks/clock",					1,		0},
