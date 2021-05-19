@@ -27,7 +27,6 @@ set signcolumn=yes
 set isfname+=@-@
 set updatetime=50
 set cmdheight=1
-set shortmess+=c
 set timeoutlen=1000
 
 "other sets
@@ -45,6 +44,7 @@ set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
+set shortmess+=c
 " Enable completions as you type
 
 "Plugins
@@ -73,7 +73,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'vim-airline/vim-airline'
 "Formatter
-Plug 'sbdchd/neoformat'
+"Plug 'sbdchd/neoformat'
 "Plug 'sheerun/vim-polyglot'
 "Python
 Plug 'ambv/black'
@@ -83,6 +83,7 @@ Plug 'mbbill/undotree'
 "Plug 'rust-lang/rust.vim'
 "Go
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }"
+"Plug 'mhartington/nvim-typescript'
 call plug#end()
 colorscheme gruvbox
 lua require'colorizer'.setup()
