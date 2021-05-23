@@ -20,7 +20,14 @@ case "$1" in
 				;;
 			selectToClip )
                 # takes a screenshot using selection tools and saves it to clipboard
-				scrot -se "xclip -selection clipboard -t image/png -i \$f; rm \$f; $ACTIONS_PATH clipboard"
+				#scrot -se "xclip -selection clipboard -t image/png -i \$f; rm \$f; $ACTIONS_PATH clipboard"
+                FILENAME=$SCREENSHOT_DIR/screenshots/$(date +%s).png
+                # to Clip
+                escrotum -s -C
+                xclip -selection clipboard -t image/png -o > $FILENAME
+                $ACTIONS_PATH clipboard
+                # File
+                #$ACTIONS_PATH $FILENAME
 				;;
 			windowToFile )
                 # takes a screenshot of active window and moves it to SCREENSHOT_DIR

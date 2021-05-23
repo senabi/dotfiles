@@ -1,6 +1,6 @@
 #History
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=5000
+SAVEHIST=5000
 HISTFILE=~/.cache/zsh/history
 
 #auto/tab complete:

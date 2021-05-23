@@ -3,7 +3,7 @@
 ### Variables
 set powermenu_theme ~/.config/rofi/powermenu.rasi
 set confirm_prompt_theme ~/.config/rofi/confirm.rasi
-set uptime (uptime -p | sed -e 's/up //g') 
+set uptime (uptime -p | sed -e 's/up //g')
 #set focused (swaymsg -t get_outputs | jq 'map(.focused) | reverse  | index(true)')
 
 ### Power Options
@@ -15,7 +15,7 @@ set logout 󰍃
 
 ### Confirmation
 function confirm_exit
-	rofi -dmenu -i -no-fixed-num-lines -p "Are You Sure? [y/n] ● " -theme $confirm_prompt_theme -monitor $focused
+	rofi -dmenu -i -no-fixed-num-lines -p "Are You Sure? [y/n] ● " -theme $confirm_prompt_theme
 end
 
 ### Icon Menu
@@ -48,7 +48,7 @@ switch $chosen
 		else if test $ans = 'n'
 			exit 0
 		end
-	case $logout	
+	case $logout
 		set ans (confirm_exit)
 		if test $ans = 'y'
 			pkill dwm
