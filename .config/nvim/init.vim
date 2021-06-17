@@ -153,6 +153,15 @@ nnoremap <leader>vsd :lua vim.lsp.util.show_line_diagnostics(); vim.lsp.util.sho
 nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
 "nnoremap <leader>vll :call LspLocationList()<CR>
 
+"Git
+nnoremap <leader>ga :Git fetch --all<CR>
+nnoremap <leader>grum :Git rebase upstream/master<CR>
+nnoremap <leader>grom :Git rebase origin/master<CR>
+
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gu :diffget //2<CR>
+nmap <leader>gs :G<CR>
+
 "autocommands
 fun! TrimWhitespace()
     let l:save=winsaveview()

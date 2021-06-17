@@ -4,7 +4,7 @@
 # Some variables you may want to change
 # in particular, make sure that SCREENSHOT_DIR is set to the directory that you wish to store screenshots in.
 
-SCREENSHOT_DIR=$HOME/Pictures/
+SCREENSHOT_DIR=$HOME/Pictures/screenshots/
 ACTIONS_PATH=$HOME/.config/hotscripts/screenshot_actions.sh
 OCR_LANG="eng" # change this to your preferred language. use tesseract --list-langs to see your installed languages.
 
@@ -20,5 +20,5 @@ function play_sound() {
 }
 
 function send_error() {
-	dunstify -u critical -i "$ERROR_ICON" "Screenshot Actions Error" "$1"
+	notify-send -u critical -i "$ERROR_ICON" "Screenshot Actions Error" "$1"
 }

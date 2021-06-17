@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-# www.jrodal.dev
+#!/usr/bin/env sh
 
 source $HOME/.config/hotscripts/variables.sh
 
@@ -23,14 +22,14 @@ function delete() {
     case $(echo -e "yes\nno" | dmenu -p "Are you sure you want to delete the screenshot?") in
         yes )
             rm $1
-            dunstify -i $CAMERA_ICON "Screenshot has been deleted"
+            notify-send -i $CAMERA_ICON "Screenshot has been deleted"
             ;;
     esac
 }
 
 function ocr() {
     xclip -o -selection clipboard -t image/png | tesseract -l $OCR_LANG stdin stdout | xclip -sel clip
-    dunstify -i $OCR_ICON "Text copied to clipboard"
+    notify-send -i $OCR_ICON "Text copied to clipboard"
 
 }
 
@@ -43,7 +42,7 @@ function to_clip() {
         *)
             ;;
     esac
-    dunstify -i $CAMERA_ICON "Image $2 to clipboard"
+    notify-send -i $CAMERA_ICON "Image $2 to clipboard"
 }
 
 function upload_0x0() {
@@ -57,16 +56,17 @@ function upload_0x0() {
             ;;
     esac
     URL=$(curl -F"file=@$FILENAME" http://0x0.st)
-    dunstify -i $CAMERA_ICON "Image uploaded to $URL"
+    notify-send -i $CAMERA_ICON "Image uploaded to $URL"
 }
 
 
 case $1 in
     clipboard)
-        ACTION=$(play_sound & dunstify -A "saveas,save as" -A "ocr,ocr" -A "upTo0x0,upload to 0x0.st" -i $HOME/.local/share/icons/dunst_icons/icons8-camera-100.png "Screenshot" "Screenshot saved to clipboard")
+        #ACTION=$(play_sound & notify-send -A "saveas,save as" -A "ocr,ocr" -A "upTo0x0,upload to 0x0.st" -i $HOME/.local/share/icons/dunst_icons/icons8-camera-100.png "Screenshot" "Screenshot saved to clipboard")
+        ACTION=$(play_sound & notify-send -i $HOME/.local/share/icons/dunst_icons/icons8-camera-100.png "Screenshot" "Screenshot saved to clipboard")
         ;;
     *)
-        ACTION=$(play_sound & dunstify -A "rename,rename" -A "delete,delete" -A "mvToClip,move to clipboard" -A "cpToClip,copy to clipboard" -A "upTo0x0,upload to 0x0.st" -i $HOME/.local/share/icons/dunst_icons/icons8-camera-100.png "Screenshot" "Screenshot saved to $1")
+        ACTION=$(play_sound & notify-send -A "rename,rename" -A "delete,delete" -A "mvToClip,move to clipboard" -A "cpToClip,copy to clipboard" -A "upTo0x0,upload to 0x0.st" -i $HOME/.local/share/icons/dunst_icons/icons8-camera-100.png "Screenshot" "Screenshot saved to $1")
         ;;
 esac
 

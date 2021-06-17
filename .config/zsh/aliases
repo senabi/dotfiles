@@ -5,7 +5,7 @@ alias update="sudo pacman -Syyu"
 alias cleanup="sudo pacman -Qtdq | sudo pacman -Rns -"
 alias pacman="sudo pacman"
 alias xorg-copy="xclip -selection clipboard"
-alias code="code --use-gl=egl --egl=desktop --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy"
+alias code="code --use-gl=egl --ignore-gpu-blocklist --enable-gpu-rasterization"
 
 abbr reload-fonts="fc-cache -fv"
 abbr mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"

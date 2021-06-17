@@ -4,11 +4,15 @@ local lsp_completion = require'completion'
 local util = require 'lspconfig/util'
 local on_attach = require'completion'.on_attach
 local lsp_default_config = { on_attach = on_attach, capabilites = vim.lsp.protocol.make_client_capabilities() }
+
 function root_dir()
     return vim.loop.os_homedir()
 end
 local servers = {
-    clangd = { root_dir = root_dir },
+    --clangd = { root_dir = root_dir },
+    clangd = {
+        --root_dir=util.root_pattern("compile_commands.json", "compile_flags.txt", ".git");
+    },
     zls = { root_dir = root_dir },
     pyls = { root_dir = root_dir },
     gopls = {

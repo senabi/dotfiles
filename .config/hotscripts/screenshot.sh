@@ -21,7 +21,7 @@ case "$1" in
 			selectToClip )
                 # takes a screenshot using selection tools and saves it to clipboard
 				#scrot -se "xclip -selection clipboard -t image/png -i \$f; rm \$f; $ACTIONS_PATH clipboard"
-                FILENAME=$SCREENSHOT_DIR/screenshots/$(date +%s).png
+                FILENAME=$SCREENSHOT_DIR/$(date +%s).png
                 # to Clip
                 escrotum -s -C
                 xclip -selection clipboard -t image/png -o > $FILENAME
