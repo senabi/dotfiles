@@ -72,6 +72,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
 "Formatter
 "Plug 'sbdchd/neoformat'
 "Plug 'sheerun/vim-polyglot'
@@ -89,6 +90,11 @@ colorscheme gruvbox
 lua require'colorizer'.setup()
 lua require'nvim-treesitter.configs'.setup { highlihgt = { enable = true } }
 lua require("nabi")
+
+"if executable('rg')
+"    let g:rg_derive_root='true'
+"endif
+
 "RainbowParentheses
 "editor
 highlight Normal ctermbg=none
@@ -111,11 +117,17 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 "git
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
 "fuzzy grep
-nnoremap <leader>zg :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ") })<CR>
+nnoremap <leader>gf :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep for > ")})<CR>
 "file finder
 nnoremap <leader>ff :lua require('telescope.builtin').find_files()<CR>
 "buffer finder
 nnoremap <leader>bf :lua require('telescope.builtin').buffers()<CR>
+"git branches
+nnoremap <leader>gc :lua require('nabi.telescope').git_branches()<CR>
+"word finder
+nnoremap <leader>wf :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
+" livegrep
+nnoremap <leader>rg <cmd>lua require('telescope.builtin').live_grep()<cr>
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
