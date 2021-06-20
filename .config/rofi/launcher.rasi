@@ -1,13 +1,13 @@
 configuration {
     lines: 10;
     columns: 1;
-    font: "Roboto Mono 12";
+    font: "Product Sans 13";
     bw: 0;
     location: 0;
     padding: 0;
     fixed-num-lines: true;
     show-icons: true;
-    icon-theme: "Papirus-dark";
+    icon-theme: "Adwaita";
     sidebar-mode: true;
     separator-style: "none";
     hide-scrollbar: true;

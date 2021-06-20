@@ -78,8 +78,19 @@ Plug 'airblade/vim-gitgutter'
 "Plug 'sheerun/vim-polyglot'
 "Python
 Plug 'ambv/black'
-"
+" [11] Move code
+Plug 'tpope/vim-unimpaired'
+" [12] Auto close brackets, parenthesis, etc
+Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
+Plug 'google/vim-maktaba'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'google/vim-codefmt'
+Plug 'preservim/nerdcommenter'
+" Also add Glaive, which is used to configure codefmt's maktaba flags. See
+" `:help :Glaive` for usage.
+Plug 'google/vim-glaive'
 "Rust
 "Plug 'rust-lang/rust.vim'
 "Go
@@ -99,8 +110,8 @@ lua require("nabi")
 "editor
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
-"highlight Normal guibg=none
-"highlight NonText guibg=none
+highlight Normal guibg=none
+highlight NonText guibg=none
 
 highlight NonText guifg=#464646
 
@@ -112,6 +123,31 @@ let g:netrw_winsize = 25
 "lsp
 let g:completion_enable_auto_popup = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+
+" [9]
+" Enable vim-prettier to run in files without requiring the "@format" doc tag
+let g:prettier#autoformat = 0
+let g:prettier#config#tab_width = 4
+"none" - No trailing commas.
+"es5" - Trailing commas where valid in ES5 (objects, arrays, etc.)
+"all" - Trailing commas wherever possible (including function arguments). This requires node 8 or a transform.
+let g:prettier#config#trailing_comma = 'es5'
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md Prettier
+
+let g:NERDCreateDefaultMappings = 0
+
+" [11]
+" Move single lines
+nmap <C-k> [e
+nmap <C-j> ]e
+" Move multiple lines selected
+vmap <C-k> [egv
+vmap <C-j> ]egv
+
+nmap <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle
+"nmap <
+"vmap
 
 "telescope
 "git
@@ -135,8 +171,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "remaps
 "normal no recursive execution map
 "project wide search: word search on this project "i name it fuzzy search
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+"vnoremap J :m '>+1<CR>gv=gv
+"vnoremap K :m '<-2<CR>gv=gv
 "so is this the greatest one?
 "paste on whatever i have selected without loosing the register
 vnoremap <leader>p "_dp
@@ -188,4 +224,18 @@ augroup SSGROUP
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
     "autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+augroup END
+
+augroup autoformat_settings
+  "autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  "autocmd FileType gn AutoFormatBuffer gn
+  "autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  autocmd FileType rust AutoFormatBuffer rustfmt
+  "autocmd FileType vue AutoFormatBuffer prettier
 augroup END
