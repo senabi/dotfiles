@@ -52,7 +52,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 #alias and ?abbriations?
-[ -f "$HOME/.config/zsh/aliases" ] && source "$HOME/.config/zsh/aliases"
+[ -f "$HOME/.config/zsh/aliases.sh" ] && source "$HOME/.config/zsh/aliases.sh"
 
 #env
 

@@ -73,6 +73,9 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
+Plug 'cdelledonne/vim-cmake'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'voldikss/vim-floaterm'
 "Formatter
 "Plug 'sbdchd/neoformat'
 "Plug 'sheerun/vim-polyglot'
@@ -123,7 +126,21 @@ let g:netrw_winsize = 25
 "lsp
 let g:completion_enable_auto_popup = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+"cmake
+let g:cmake_link_compile_commands = 1
+nmap <leader>cg :CMakeGenerate<cr>
+nmap <leader>cb :CMakeGenerate<cr>
+"floaterm
+"let g:floaterm_keymap_new = '<Leader>ft'
+nnoremap <silent><leader>ft :FloatermNew<CR>
+nnoremap <silent><leader>gl :FloatermToggle<CR>
+let g:floaterm_position = 'bottom'
+let g:floaterm_width = 1.0
+let g:flaoterm_height = 0.4
 
+nnoremap <leader>e :FloatermNew nnn<CR>
+
+"let g:floaterm_keymap_toggle = '<Leader>gl'
 " [9]
 " Enable vim-prettier to run in files without requiring the "@format" doc tag
 let g:prettier#autoformat = 0
@@ -188,6 +205,10 @@ nnoremap <leader>Y gg"+yG
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 nnoremap <leader>t :Ex<CR>
+
+"gah
+"imap <C-Del> <C-o>ce
+"imap <C-Del> Xce
 
 "lsp
 nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
